@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+extension Bundle {
+    
+    func decode<T: Codable>(_ file : String) -> T {
+        
+    }
+}
+
+
+

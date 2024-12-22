@@ -25,6 +25,7 @@ struct ContentView: View {
                         FeaturedTabView()
                            .padding(.vertical, 20)
                            .frame(height: 256)
+                        CategoryGridView()
                         FooterNoteView()
                             .padding()
                     } // :- VSTACK

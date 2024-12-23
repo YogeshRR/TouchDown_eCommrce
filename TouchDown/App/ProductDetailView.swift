@@ -28,15 +28,26 @@ struct ProductDetailView: View {
             
             // DETAIL BOTTOM PART
             
-            // RATINGS AND SIZES
+            VStack (alignment: .leading, spacing: 0, content: {
+                // RATINGS AND SIZES
+                ScrollView(.vertical, showsIndicators: false, content: {
+                    Text(sampleProduct.description)
+                        .font(.system(.body, design: .rounded))
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.leading)
+                }) // :- VSTACK
+                .padding(.horizontal)
+                .background(Color.white)
+                // DESCRIPTION
+                
+                // QUANTITY AND FAVOURITE
+                
+                // ADD TO CART
+                
+                Spacer()
+            })
             
-            // DESCRIPTION
             
-            // QUANTITY AND FAVOURITE
-            
-            // ADD TO CART
-            
-            Spacer()
         }) // :- VSTACK
         .ignoresSafeArea(.all, edges: .all)
         .background(

@@ -34,6 +34,8 @@ struct ContentView: View {
                            }
                        }) // :- LAZY GRID VIEW
                        .padding(15)
+                       TitleView(title: "Brands")
+                       BrandGridView()
                         FooterNoteView()
                             .padding()
                     } // :- VSTACK

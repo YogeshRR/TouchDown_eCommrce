@@ -17,6 +17,7 @@ struct ProductDetailView: View {
           ProductDetailNavigationBar()
                 .padding(.horizontal)
                 .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
+            
             // HEADER
             HeaderDetailView()
                 .padding(.horizontal)
@@ -25,30 +26,46 @@ struct ProductDetailView: View {
             
             TopPartDetailView()
                 .padding(.horizontal)
+                .zIndex(1)
             
+    
             // DETAIL BOTTOM PART
             
             VStack (alignment: .leading, spacing: 0, content: {
                 // RATINGS AND SIZES
+    
+                RatingsandSizesDetailView()
+                    
+                    .padding(.top, -20)
+                    .padding(.bottom, 10)
+                
+                // DESCRIPTION
                 ScrollView(.vertical, showsIndicators: false, content: {
                     Text(sampleProduct.description)
                         .font(.system(.body, design: .rounded))
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.leading)
                 }) // :- VSTACK
-                .padding(.horizontal)
-                .background(Color.white)
-                // DESCRIPTION
                 
                 // QUANTITY AND FAVOURITE
                 
+                QuantityFavouriteDetailView()
+                    .padding(.vertical, 30)
+                
                 // ADD TO CART
                 
-                Spacer()
-            })
+                AddToCartDetailView()
+                    .padding(.bottom, 20)
+            }) // :- VSTACK
+            .padding(.horizontal)
+            .background(Color.white
+                .clipShape(CustomShape()
+                          ).padding(.top, -105))
+           
             
             
         }) // :- VSTACK
+            .zIndex(0)
         .ignoresSafeArea(.all, edges: .all)
         .background(
             Color(red: sampleProduct.red,
